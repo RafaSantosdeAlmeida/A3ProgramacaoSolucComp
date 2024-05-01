@@ -13,15 +13,15 @@ import java.util.Arrays;
 public class Jogo2048 {
     public static void main(String[] args) {
         Tabuleiro tab = new Tabuleiro(4,4);
-        TelaPrincipalDoJogo telaPrincipal = new TelaPrincipalDoJogo();
+        TelaPrincipalDoJogo telaPrincipal = new TelaPrincipalDoJogo(tab);
 
         while (true) {
             //telaPrincipal.alterarTextoMatriz(tab.getMatrizTabuleiro());
             tab.setElementos();
             telaPrincipal.setComponentes(tab.getMatrizElemento());
-            tab.gerarNovo2();
+            //tab.gerarNovo2();
             telaPrincipal.setVisible(true);
-            tab.novaJogada();
+            //tab.novaJogada();
             
         }
     }

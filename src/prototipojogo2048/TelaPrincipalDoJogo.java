@@ -4,19 +4,24 @@
  */
 package prototipojogo2048;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author marco
  */
-public class TelaPrincipalDoJogo extends javax.swing.JFrame{
-
+public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListener{
+    private Tabuleiro tab;
     /**
      * Creates new form TelaPrincipalDoJogo
      */
-    public TelaPrincipalDoJogo() {
+    public TelaPrincipalDoJogo(Tabuleiro tab) {
         initComponents();
+        addKeyListener(this);
+        setFocusable(true);
+        this.tab = tab;
     }
 
     /**
@@ -720,7 +725,7 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipalDoJogo().setVisible(true);
+                new TelaPrincipalDoJogo(new Tabuleiro(4,4)).setVisible(true);
             }
         });
     }
@@ -761,4 +766,32 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame{
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+       if(e.getKeyChar()=='w'){
+           tab.moverCima();
+           tab.gerarNovo2();
+       }
+       else if(e.getKeyChar()=='a'){
+           tab.moverEsquerda();
+           tab.gerarNovo2();
+       }
+       else if(e.getKeyChar()=='s'){
+           tab.moverBaixo();
+           tab.gerarNovo2();
+       }
+       else if(e.getKeyChar()=='d'){
+           tab.moverDireita();
+           tab.gerarNovo2();
+       }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
 }
