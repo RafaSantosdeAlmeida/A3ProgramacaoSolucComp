@@ -16,10 +16,13 @@ public class Jogo2048 {
         TelaPrincipalDoJogo telaPrincipal = new TelaPrincipalDoJogo();
 
         while (true) {
-            telaPrincipal.alterarMatriz(tab.matrizTabuleiro);
+            //telaPrincipal.alterarTextoMatriz(tab.getMatrizTabuleiro());
+            tab.setElementos();
+            telaPrincipal.setComponentes(tab.getMatrizElemento());
+            tab.gerarNovo2();
             telaPrincipal.setVisible(true);
             tab.novaJogada();
-            tab.gerarNovo2();
+            
         }
     }
 }
