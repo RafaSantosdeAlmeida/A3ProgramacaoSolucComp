@@ -32,6 +32,7 @@ public class Tabuleiro {
         
         //Gera dois novo bloqueio
         gerarBloqueio();
+        gerarBloqueio();
         
         //CRIAR objetos Elemento na matriz
         

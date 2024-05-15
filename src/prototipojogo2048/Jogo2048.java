@@ -4,6 +4,8 @@
  */
 package prototipojogo2048;
 
+import interfaces.MenuInicial;
+import interfaces.TelaPrincipalDoJogo;
 import java.util.Arrays;
 
 /**
@@ -14,7 +16,7 @@ public class Jogo2048 {
     public static void main(String[] args) {
         Tabuleiro tab = new Tabuleiro(4,4);
         TelaPrincipalDoJogo telaPrincipal = new TelaPrincipalDoJogo(tab);
-
+        
         while (true) {
             //telaPrincipal.alterarTextoMatriz(tab.getMatrizTabuleiro());
             tab.setElementos();
@@ -24,6 +26,11 @@ public class Jogo2048 {
             //tab.novaJogada();
             
         }
+//          MenuInicial painel = new MenuInicial();
+//          
+//          do{
+//              painel.setVisible(true);
+//          }while(painel.isVisible());
     }
 }
 
