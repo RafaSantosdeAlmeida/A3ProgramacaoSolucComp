@@ -15,13 +15,23 @@ import java.util.Scanner;
 public class Tabuleiro {
     private int[][] matrizTabuleiro;
     private Elemento[][] matrizElemento;
-    private int nLinhas, nColunas;
+    private int nLinhas, nColunas, score;
     
+    public void somaScore(int valorSoma){
+        score += valorSoma;
+    }
+    
+    public int getScore() {
+        return score;
+    }
+
+
     public Tabuleiro(int nLinhas, int nColunas){    //CONSTRUTOR
         this.matrizTabuleiro = new int[nLinhas][nColunas];
         this.matrizElemento = new Elemento[nLinhas][nColunas];
         this.nLinhas = nLinhas;
         this.nColunas = nColunas;
+        this.score = 0;
         
         
         for (int linha = 0; linha < this.matrizElemento.length; linha++) {
@@ -45,143 +55,6 @@ public class Tabuleiro {
     }
     
     
-    public void novaJogada(){   //REALIZA O CALCULO DAS JOGADAS e ALTERA matrizTabuleiro
-        
-        Scanner teclado = new Scanner(System.in);
-        
-        char movimento;
-        boolean flagBloqueado=false;    //DIZ se existe um elemento entre dois que bloqueia a soma deles
-        
-        System.out.print("Digite o seu movimento(w a s d): ");
-        movimento = teclado.nextLine().charAt(0);
-        
-        //ATENÇÃO NÃO MEXA AQUI
-        switch(movimento){
-            case 'w':       //ITERA de cima para baixo
-                
-                for (int linhaMatriz = 0; linhaMatriz < matrizTabuleiro.length; linhaMatriz++) {
-                    for (int colunaMatriz = 0; colunaMatriz < matrizTabuleiro[linhaMatriz].length; colunaMatriz++) {
-                        for (int elementosBaixo = linhaMatriz+1; elementosBaixo < matrizTabuleiro.length; elementosBaixo++) {
-                            //Bloco de Bloqueio
-                            if(this.matrizElemento[linhaMatriz][colunaMatriz].isBloqueado()||
-                               this.matrizElemento[elementosBaixo][colunaMatriz].isBloqueado()){
-                                flagBloqueado = true;
-                            }
-                            
-                            
-                            if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[elementosBaixo][colunaMatriz]) & (flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementosBaixo][colunaMatriz];
-                                matrizTabuleiro[elementosBaixo][colunaMatriz]=0;
-                            }
-                            else if ((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)) {
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementosBaixo][colunaMatriz];
-                                matrizTabuleiro[elementosBaixo][colunaMatriz]=0;
-                            }
-                            else if((matrizTabuleiro[elementosBaixo][colunaMatriz]==0) & (flagBloqueado==false)){
-                                //flagBloqueado = flagBloqueado;
-                            }
-                            else{
-                                flagBloqueado = true;
-                            }
-                        }
-                        flagBloqueado = false;
-                    }
-                }
-                break;
-                
-            case 'a':       //ITERA da esquerda para direita
-                
-                for (int linhaMatriz = 0; linhaMatriz < matrizTabuleiro.length; linhaMatriz++) {
-                    for (int colunaMatriz = 0; colunaMatriz < matrizTabuleiro[linhaMatriz].length; colunaMatriz++) {
-                        for (int elementoDireita = colunaMatriz+1; elementoDireita < matrizTabuleiro[linhaMatriz].length; elementoDireita++) {
-                            //Bloco de Bloqueio
-                            if(this.matrizElemento[linhaMatriz][colunaMatriz].isBloqueado()||
-                               this.matrizElemento[linhaMatriz][elementoDireita].isBloqueado()){
-                                flagBloqueado = true;
-                            }
-                            
-                            if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[linhaMatriz][elementoDireita]) & (flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoDireita];
-                                matrizTabuleiro[linhaMatriz][elementoDireita]=0;
-                            }
-                            else if((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoDireita];
-                                matrizTabuleiro[linhaMatriz][elementoDireita]=0;
-                            }
-                            else if((matrizTabuleiro[linhaMatriz][elementoDireita]==0) & (flagBloqueado==false)){
-                                //flagBloqueado=flagBloqueado;
-                            }
-                            else {
-                                flagBloqueado = true;
-                            }
-                        }
-                        flagBloqueado = false;
-                    }
-                }
-                break;
-                
-            case 's':       //ITERA de baixo para cima
-                
-                for (int linhaMatriz =  matrizTabuleiro.length-1; linhaMatriz >= 0; linhaMatriz-=1) {
-                    for (int colunaMatriz = 0; colunaMatriz < matrizTabuleiro[linhaMatriz].length; colunaMatriz++) {
-                        for (int elementoCima = linhaMatriz-1; elementoCima >= 0; elementoCima-=1) {
-                            //Bloco de Bloqueio
-                            if(this.matrizElemento[linhaMatriz][colunaMatriz].isBloqueado()||
-                               this.matrizElemento[elementoCima][colunaMatriz].isBloqueado()){
-                                flagBloqueado = true;
-                            }
-                            
-                            if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[elementoCima][colunaMatriz]) & (flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementoCima][colunaMatriz];
-                                matrizTabuleiro[elementoCima][colunaMatriz]=0;
-                            }
-                            else if ((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)) {
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementoCima][colunaMatriz];
-                                matrizTabuleiro[elementoCima][colunaMatriz]=0;
-                            }
-                            else if((matrizTabuleiro[elementoCima][colunaMatriz]==0) & (flagBloqueado==false)){
-                                //flagBloqueado = flagBloqueado;
-                            }
-                            else{
-                                flagBloqueado = true;
-                            }
-                        }
-                        flagBloqueado = false;
-                    }
-                }
-                break;
-                
-            case 'd':       //ITERA da direita para esquerda
-                
-                for (int linhaMatriz = 0; linhaMatriz < matrizTabuleiro.length; linhaMatriz++) {
-                    for (int colunaMatriz = matrizTabuleiro[linhaMatriz].length-1; colunaMatriz >= 0; colunaMatriz--) {
-                        for (int elementoEsquerda = colunaMatriz-1; elementoEsquerda >= 0; elementoEsquerda--) {
-                            //Bloco de Bloqueio
-                            if(this.matrizElemento[linhaMatriz][colunaMatriz].isBloqueado()||
-                               this.matrizElemento[linhaMatriz][elementoEsquerda].isBloqueado()){
-                                flagBloqueado = true;
-                            }
-                            
-                            if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[linhaMatriz][elementoEsquerda])&(flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoEsquerda];
-                                matrizTabuleiro[linhaMatriz][elementoEsquerda]=0;
-                            }
-                            else if((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)){
-                                matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoEsquerda];
-                                matrizTabuleiro[linhaMatriz][elementoEsquerda]=0;
-                            }
-                            else if((matrizTabuleiro[linhaMatriz][elementoEsquerda]==0) & (flagBloqueado==false)){
-                                //flagBloqueado = flagBloqueado;
-                            }
-                            else{
-                                flagBloqueado = true;
-                            }
-                        }
-                        flagBloqueado = false;
-                    }
-                }
-        }
-    }
     
     
     public void moverCima(){
@@ -199,6 +72,7 @@ public class Tabuleiro {
                             
                             if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[elementosBaixo][colunaMatriz]) & (flagBloqueado==false)){
                                 matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementosBaixo][colunaMatriz];
+                                somaScore(matrizTabuleiro[linhaMatriz][colunaMatriz]); // Atualiza o score
                                 matrizTabuleiro[elementosBaixo][colunaMatriz]=0;
                             }
                             else if ((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)) {
@@ -233,6 +107,7 @@ public class Tabuleiro {
                             
                             if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[linhaMatriz][elementoDireita]) & (flagBloqueado==false)){
                                 matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoDireita];
+                                somaScore(matrizTabuleiro[linhaMatriz][colunaMatriz]); // Atualiza o score
                                 matrizTabuleiro[linhaMatriz][elementoDireita]=0;
                             }
                             else if((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)){
@@ -266,6 +141,7 @@ public class Tabuleiro {
                             
                             if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[elementoCima][colunaMatriz]) & (flagBloqueado==false)){
                                 matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[elementoCima][colunaMatriz];
+                                somaScore(matrizTabuleiro[linhaMatriz][colunaMatriz]); // Atualiza o score
                                 matrizTabuleiro[elementoCima][colunaMatriz]=0;
                             }
                             else if ((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)) {
@@ -299,6 +175,7 @@ public class Tabuleiro {
                             
                             if((matrizTabuleiro[linhaMatriz][colunaMatriz]==matrizTabuleiro[linhaMatriz][elementoEsquerda])&(flagBloqueado==false)){
                                 matrizTabuleiro[linhaMatriz][colunaMatriz]+=matrizTabuleiro[linhaMatriz][elementoEsquerda];
+                                somaScore(matrizTabuleiro[linhaMatriz][colunaMatriz]); // Atualiza o score
                                 matrizTabuleiro[linhaMatriz][elementoEsquerda]=0;
                             }
                             else if((matrizTabuleiro[linhaMatriz][colunaMatriz]==0) & (flagBloqueado==false)){
@@ -374,5 +251,21 @@ public class Tabuleiro {
         return matrizTabuleiro;
     }
     
-    
+    public boolean isWin(){
+        boolean win = false;
+
+        for (int linha = 0; linha < matrizTabuleiro.length; linha++) {
+            for (int coluna = 0; coluna < matrizTabuleiro[linha].length; coluna++) {
+                if (matrizTabuleiro[linha][coluna] == 2048) {
+                    win = true;
+                    
+                }else{ win = false;
+
+                }
+
+            }
+            
+        } return win;
+    }
+
 }

@@ -24,7 +24,7 @@ public class Jogo2048 {
             //tab.gerarNovo2();
             telaPrincipal.setVisible(true);
             //tab.novaJogada();
-            
+            System.out.println("memes tipos de carinhas!");
         }
 //          MenuInicial painel = new MenuInicial();
 //          
