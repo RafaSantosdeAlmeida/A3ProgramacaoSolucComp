@@ -93,7 +93,7 @@ public class Tabuleiro {
     
     }
     
-    
+
     public void moverEsquerda(){
         boolean flagBloqueado=false;    //DIZ se existe um elemento entre dois que bloqueia a soma deles
         

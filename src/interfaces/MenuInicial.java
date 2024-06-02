@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 import jogo2048.Tabuleiro;
 
 /**
@@ -30,6 +32,12 @@ public class MenuInicial extends javax.swing.JFrame {
         else if(dificuldade=="Dificil"){
             this.dificuldade = 3;
         }
+        icon();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void icon(){
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("..\\imagens\\IconeJogo.png")));
     }
 
     /**
@@ -47,6 +55,8 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("2048");
+        setIconImages(null);
         setLocation(new java.awt.Point(600, 170));
         setMinimumSize(new java.awt.Dimension(700, 700));
         setResizable(false);
@@ -128,6 +138,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
         // Botão jogar
+        JOptionPane.showMessageDialog(this, "Para se movimentar utilize os botões: WASD", "Botões", JOptionPane.INFORMATION_MESSAGE);
         Tabuleiro tab = new Tabuleiro(4,4,this.dificuldade);
         TelaPrincipal tela = new TelaPrincipal(tab);
         tab.setElementos();

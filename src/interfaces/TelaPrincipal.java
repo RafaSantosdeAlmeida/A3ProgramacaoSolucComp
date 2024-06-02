@@ -4,6 +4,7 @@
  */
 package interfaces;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
@@ -25,7 +26,14 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
         addKeyListener(this);
         setFocusable(true);
         this.tab = tab;
+        icon();
+        this.setLocationRelativeTo(null);
     }
+    
+    public void icon(){
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("..\\imagens\\IconeJogo.png")));
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,6 +84,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("2048");
         setBackground(new java.awt.Color(153, 153, 153));
         setLocation(new java.awt.Point(600, 170));
         setResizable(false);
@@ -869,13 +878,15 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
     public void keyReleased(KeyEvent e) {
         
         if(tab.isLose()){
-            JOptionPane.showMessageDialog(this, "Game Over, infelizmente você perdeu tente novamente","Derrota" , JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Infelizmente você perdeu, tente novamente outra vez","Derrota" , JOptionPane.INFORMATION_MESSAGE);
             System.exit(0);
         }
         else if(tab.isWin()){
             JOptionPane.showMessageDialog(this, "Parabéns!! Você ganhou o 2048!","Vitória" , JOptionPane.INFORMATION_MESSAGE);
             System.exit(0);
         }
+        
+        //CIMA
         else if((e.getKeyChar()=='w')&tab.isMovCima()){
             tab.moverCima();
             tab.gerarNovo2();
@@ -884,6 +895,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
             JOptionPane.showMessageDialog(this, "Você não pode se mover para cima", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
        
+        //ESQUERDA
         else if((e.getKeyChar()=='a')&tab.isMovEsquerda()){
             tab.moverEsquerda();
             tab.gerarNovo2();
@@ -892,6 +904,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
             JOptionPane.showMessageDialog(this, "Você não pode se mover para esquerda", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
        
+        //BAIXO
         else if((e.getKeyChar()=='s')&tab.isMovBaixo()){
             tab.moverBaixo();
             tab.gerarNovo2();
@@ -900,6 +913,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
             JOptionPane.showMessageDialog(this, "Você não pode se mover para baixo", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
        
+        //DIREITA
         else if((e.getKeyChar()=='d')&tab.isMovDireita()){
             tab.moverDireita();
             tab.gerarNovo2();
@@ -907,6 +921,8 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
         else if((e.getKeyChar()=='d')&tab.isMovDireita()==false){   //Controle de excessâo
             JOptionPane.showMessageDialog(this, "Você não pode se mover para direita", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
+        
+        //Atualiza matrizElementos da tabela e seta os componentes desse objeto
         tab.setElementos();
         this.setComponentes(tab.getMatrizElemento());
         this.setVisible(true);

@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author marco
@@ -15,6 +17,12 @@ public class MenuOpcoes extends javax.swing.JFrame {
      */
     public MenuOpcoes() {
         initComponents();
+        icon();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void icon(){
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("..\\imagens\\IconeJogo.png")));
     }
 
     /**
@@ -27,11 +35,12 @@ public class MenuOpcoes extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("2048");
         setLocation(new java.awt.Point(600, 170));
         setMaximumSize(new java.awt.Dimension(700, 700));
         setMinimumSize(new java.awt.Dimension(700, 700));
@@ -42,21 +51,21 @@ public class MenuOpcoes extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nivel de dificuldade");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(230, 220, 240, 30);
+        jLabel2.setBounds(230, 270, 240, 30);
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SALVAR");
-        jButton1.setToolTipText("");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setBackground(new java.awt.Color(153, 153, 153));
+        botaoSalvar.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        botaoSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSalvar.setText("SALVAR");
+        botaoSalvar.setToolTipText("");
+        botaoSalvar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(250, 570, 210, 70);
+        getContentPane().add(botaoSalvar);
+        botaoSalvar.setBounds(250, 570, 210, 70);
 
         jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
         jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -68,7 +77,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(270, 260, 150, 40);
+        jComboBox1.setBounds(270, 310, 150, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ImagemOpcoes.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -81,14 +90,14 @@ public class MenuOpcoes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         // Botão jogar
         MenuInicial menuInicial = new MenuInicial(this.jComboBox1.getSelectedItem().toString());
         
         menuInicial.setVisible(true);
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,7 +135,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
