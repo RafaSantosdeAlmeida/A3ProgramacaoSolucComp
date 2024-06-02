@@ -6,20 +6,21 @@ package interfaces;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import prototipojogo2048.Elemento;
-import prototipojogo2048.Tabuleiro;
+import jogo2048.Elemento;
+import jogo2048.Tabuleiro;
 
 /**
  *
  * @author marco
  */
-public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListener{
+public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
     private Tabuleiro tab;
     /**
      * Creates new form TelaPrincipalDoJogo
      */
-    public TelaPrincipalDoJogo(Tabuleiro tab) {
+    public TelaPrincipal(Tabuleiro tab) {
         initComponents();
         addKeyListener(this);
         setFocusable(true);
@@ -86,8 +87,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel01.setPreferredSize(new java.awt.Dimension(125, 125));
 
         jLabel01.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel01.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel01.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel01.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel01.setText(" 11");
         jLabel01.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel01.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -115,8 +117,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel02.setPreferredSize(new java.awt.Dimension(125, 125));
 
         jLabel02.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel02.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel02.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel02.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel02.setText(" 11");
         jLabel02.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel02.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -144,8 +147,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel03.setPreferredSize(new java.awt.Dimension(125, 125));
 
         jLabel03.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel03.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel03.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel03.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel03.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel03.setText(" 11");
         jLabel03.setPreferredSize(new java.awt.Dimension(60, 50));
 
@@ -172,8 +176,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel04.setPreferredSize(new java.awt.Dimension(125, 125));
 
         jLabel04.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel04.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel04.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel04.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel04.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel04.setText(" 11");
         jLabel04.setPreferredSize(new java.awt.Dimension(60, 50));
 
@@ -199,8 +204,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel05.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel05.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel05.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel05.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel05.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel05.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel05.setText(" 11");
         jLabel05.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel05.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -227,8 +233,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel07.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel07.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel07.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel07.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel07.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel07.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel07.setText(" 11");
         jLabel07.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel07.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -255,8 +262,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel08.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel08.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel08.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel08.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel08.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel08.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel08.setText(" 11");
         jLabel08.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel08.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -283,8 +291,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel06.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel06.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel06.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel06.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel06.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel06.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel06.setText(" 11");
         jLabel06.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel06.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -311,8 +320,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel09.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel09.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel09.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel09.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel09.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel09.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel09.setText(" 11");
         jLabel09.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel09.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -339,8 +349,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel12.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel12.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText(" 11");
         jLabel12.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel12.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -367,8 +378,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel11.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel11.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText(" 11");
         jLabel11.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel11.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -395,8 +407,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel10.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel10.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText(" 11");
         jLabel10.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel10.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -423,8 +436,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel13.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel13.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText(" 11");
         jLabel13.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel13.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -451,8 +465,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel16.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel16.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText(" 11");
         jLabel16.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel16.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -479,8 +494,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel15.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel15.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText(" 11");
         jLabel15.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel15.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -507,8 +523,9 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
         jPanel14.setMinimumSize(new java.awt.Dimension(125, 125));
 
         jLabel14.setBackground(new java.awt.Color(119, 110, 101));
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(119, 110, 101));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText(" 11");
         jLabel14.setMaximumSize(new java.awt.Dimension(78, 60));
         jLabel14.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -714,20 +731,21 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalDoJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalDoJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalDoJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalDoJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipalDoJogo(new Tabuleiro(4,4)).setVisible(true);
+                new TelaPrincipal(new Tabuleiro(4,4)).setVisible(true);
             }
         });
     }
@@ -775,25 +793,46 @@ public class TelaPrincipalDoJogo extends javax.swing.JFrame implements KeyListen
 
     @Override
     public void keyPressed(KeyEvent e) {
-       if(e.getKeyChar()=='w'){
-           tab.moverCima();
-           tab.gerarNovo2();
-       }
-       else if(e.getKeyChar()=='a'){
-           tab.moverEsquerda();
-           tab.gerarNovo2();
-       }
-       else if(e.getKeyChar()=='s'){
-           tab.moverBaixo();
-           tab.gerarNovo2();
-       }
-       else if(e.getKeyChar()=='d'){
-           tab.moverDireita();
-           tab.gerarNovo2();
-       }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+        
+        if(tab.isLose()){
+            JOptionPane.showMessageDialog(this, "Game Over, infelizmente você perdeu tente novamente","Derrota" , HEIGHT);
+            System.exit(0);
+        }
+        else if((e.getKeyChar()=='w')&tab.isMovCima()){
+            tab.moverCima();
+            tab.gerarNovo2();
+        }
+        else if((e.getKeyChar()=='w')&tab.isMovCima()==false){   //Controle de excessâo
+            JOptionPane.showMessageDialog(this, "Você não pode se mover para cima", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+       
+        else if((e.getKeyChar()=='a')&tab.isMovEsquerda()){
+            tab.moverEsquerda();
+            tab.gerarNovo2();
+        }
+        else if((e.getKeyChar()=='a')&tab.isMovEsquerda()==false){   //Controle de excessâo
+            JOptionPane.showMessageDialog(this, "Você não pode se mover para esquerda", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+       
+        else if((e.getKeyChar()=='s')&tab.isMovBaixo()){
+            tab.moverBaixo();
+            tab.gerarNovo2();
+        }
+        else if((e.getKeyChar()=='s')&tab.isMovBaixo()==false){   //Controle de excessâo
+            JOptionPane.showMessageDialog(this, "Você não pode se mover para baixo", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+       
+        else if((e.getKeyChar()=='d')&tab.isMovDireita()){
+            tab.moverDireita();
+            tab.gerarNovo2();
+        }
+        else if((e.getKeyChar()=='d')&tab.isMovDireita()==false){   //Controle de excessâo
+            JOptionPane.showMessageDialog(this, "Você não pode se mover para direita", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+
     }
 }

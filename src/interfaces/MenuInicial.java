@@ -26,70 +26,71 @@ public class MenuInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botaoSair = new javax.swing.JButton();
+        botaoJogar = new javax.swing.JButton();
+        botaoOpcoes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(650, 170));
         setMinimumSize(new java.awt.Dimension(700, 700));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jButton3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("SAIR");
-        jButton3.setToolTipText("");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaoSair.setBackground(new java.awt.Color(153, 153, 153));
+        botaoSair.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        botaoSair.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair.setText("SAIR");
+        botaoSair.setToolTipText("");
+        botaoSair.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        botaoSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botaoSairActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(240, 450, 210, 70);
+        getContentPane().add(botaoSair);
+        botaoSair.setBounds(240, 450, 210, 70);
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("JOGAR");
-        jButton1.setToolTipText("");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoJogar.setBackground(new java.awt.Color(153, 153, 153));
+        botaoJogar.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        botaoJogar.setForeground(new java.awt.Color(255, 255, 255));
+        botaoJogar.setText("JOGAR");
+        botaoJogar.setToolTipText("");
+        botaoJogar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        botaoJogar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                botaoJogarMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoJogarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(240, 250, 210, 70);
+        getContentPane().add(botaoJogar);
+        botaoJogar.setBounds(240, 250, 210, 70);
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("OPÇÕES");
-        jButton2.setToolTipText("");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoOpcoes.setBackground(new java.awt.Color(153, 153, 153));
+        botaoOpcoes.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        botaoOpcoes.setForeground(new java.awt.Color(255, 255, 255));
+        botaoOpcoes.setText("OPÇÕES");
+        botaoOpcoes.setToolTipText("");
+        botaoOpcoes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        botaoOpcoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                botaoOpcoesMouseClicked(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton2MouseReleased(evt);
+                botaoOpcoesMouseReleased(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaoOpcoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botaoOpcoesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(240, 350, 210, 70);
+        getContentPane().add(botaoOpcoes);
+        botaoOpcoes.setBounds(240, 350, 210, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/MelhorFundo.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -98,36 +99,37 @@ public class MenuInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // Botão Sair
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botaoSairActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Botão opções
-//        MenuOpcoes menuOpcoes = new MenuOpcoes();
-//        menuOpcoes.setVisible(true);
-//        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Botão jogar
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
+    private void botaoOpcoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOpcoesActionPerformed
         // Botão opções
         MenuOpcoes menuOpcoes = new MenuOpcoes();
         menuOpcoes.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botaoOpcoesActionPerformed
 
-    private void jButton2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseReleased
+    private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
+        // Botão jogar
+    }//GEN-LAST:event_botaoJogarActionPerformed
 
-    }//GEN-LAST:event_jButton2MouseReleased
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void botaoOpcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoOpcoesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseClicked
+        // Botão opções
+//        MenuOpcoes menuOpcoes = new MenuOpcoes();
+//        menuOpcoes.setVisible(true);
+//        this.setVisible(false);
+    }//GEN-LAST:event_botaoOpcoesMouseClicked
+
+    private void botaoOpcoesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoOpcoesMouseReleased
+
+    }//GEN-LAST:event_botaoOpcoesMouseReleased
+
+    private void botaoJogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoJogarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoJogarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -166,9 +168,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botaoJogar;
+    private javax.swing.JButton botaoOpcoes;
+    private javax.swing.JButton botaoSair;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

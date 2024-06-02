@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package prototipojogo2048;
+package jogo2048;
 
 /**
  *
@@ -27,7 +27,12 @@ public class Elemento {
                                 {242,177,121},  //8
                                 {245,149,99},   //16
                                 {246,124,95},   //32
-                                {246,94,59}     //64
+                                {246,94,59},     //64
+                                {160,222,183},  //128
+                                {160,200,200},  //256
+                                {110,200,230},  //512
+                                {55,157,181},   //1024
+                                {255,100,100}   //2048
                                 };
         int[][] coresTexto = {
                              {0,0,0},           //0
@@ -36,7 +41,12 @@ public class Elemento {
                              {255,255,255},     //8
                              {255,255,255},     //16
                              {255,255,255},     //32
-                             {255,255,255}      //64
+                             {255,255,255},      //64
+                             {255,255,255},      //128
+                             {255,255,255},      //256
+                             {255,255,255},      //512
+                             {255,255,255},      //1024
+                             {255,255,255}      //2048
                              };
         int indice;
 

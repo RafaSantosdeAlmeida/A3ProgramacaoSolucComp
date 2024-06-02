@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package prototipojogo2048;
+package jogo2048;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -41,7 +41,6 @@ public class Tabuleiro {
         }
         
         //Gera dois novo bloqueio
-        gerarBloqueio();
         gerarBloqueio();
         
         //CRIAR objetos Elemento na matriz
@@ -252,20 +251,154 @@ public class Tabuleiro {
     }
     
     public boolean isWin(){
-        boolean win = false;
-
-        for (int linha = 0; linha < matrizTabuleiro.length; linha++) {
-            for (int coluna = 0; coluna < matrizTabuleiro[linha].length; coluna++) {
-                if (matrizTabuleiro[linha][coluna] == 2048) {
-                    win = true;
-                    
-                }else{ win = false;
-
+        
+        for (int[] is : matrizTabuleiro) {
+            for (int i : is) {
+                if(i>=2048){
+                    return true;
                 }
-
             }
-            
-        } return win;
+        }
+        return false;
+    }
+    
+    public boolean isLose(){
+        if((this.isMovEsquerda()==false)&
+           (this.isMovCima()==false)&
+           (this.isMovDireita()==false)&
+           (this.isMovBaixo()==false)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean isMovEsquerda(){
+        
+        boolean[][] matrizMov = new boolean[nLinhas][nColunas];
+        
+        for (int linha = 0; linha < matrizTabuleiro.length; linha++) {
+            for (int coluna = matrizTabuleiro[linha].length-1; 0 < coluna; coluna--) {
+                
+                if(matrizTabuleiro[linha][coluna]==0){
+                    matrizMov[linha][coluna]=false;
+                }
+                else if(((matrizTabuleiro[linha][coluna]==matrizTabuleiro[linha][coluna-1])||
+                   (matrizTabuleiro[linha][coluna-1]==0))&(matrizElemento[linha][coluna-1].isBloqueado()==false)){
+                    matrizMov[linha][coluna]=true;
+                }
+                else{
+                    matrizMov[linha][coluna]=false;
+                }
+                
+            }
+        }
+        
+        int testador = 0;
+        
+        for (boolean[] bs : matrizMov) {
+            for (boolean b : bs) {
+                testador+=(b)?1:0;
+            }
+        }
+        
+        return testador>0;
+    }
+    
+    public boolean isMovDireita(){
+        
+        boolean[][] matrizMov = new boolean[nLinhas][nColunas];
+        
+        for (int linha = 0; linha < matrizTabuleiro.length; linha++) {
+            for (int coluna = 0; coluna < matrizTabuleiro[linha].length-1; coluna++) {
+                
+                if(matrizTabuleiro[linha][coluna]==0){
+                    matrizMov[linha][coluna]=false;
+                }
+                else if(((matrizTabuleiro[linha][coluna]==matrizTabuleiro[linha][coluna+1])||
+                   (matrizTabuleiro[linha][coluna+1]==0))&(matrizElemento[linha][coluna+1].isBloqueado()==false)){
+                    matrizMov[linha][coluna]=true;
+                }
+                else{
+                    matrizMov[linha][coluna]=false;
+                }
+                
+            }
+        }
+        
+        int testador = 0;
+        
+        for (boolean[] bs : matrizMov) {
+            for (boolean b : bs) {
+                testador+=(b)?1:0;
+            }
+        }
+        
+        return testador>0;
+    }
+    
+    public boolean isMovCima(){
+        
+        boolean[][] matrizMov = new boolean[nLinhas][nColunas];
+        
+        for (int linha = matrizTabuleiro.length-1; 0 < linha; linha--) {
+            for (int coluna = 0; coluna < matrizTabuleiro[linha].length; coluna++) {
+                
+                if(matrizTabuleiro[linha][coluna]==0){
+                    matrizMov[linha][coluna]=false;
+                }
+                else if(((matrizTabuleiro[linha][coluna]==matrizTabuleiro[linha-1][coluna])||
+                   (matrizTabuleiro[linha-1][coluna]==0))&(matrizElemento[linha-1][coluna].isBloqueado()==false)){
+                    matrizMov[linha][coluna]=true;
+                }
+                else{
+                    matrizMov[linha][coluna]=false;
+                }
+                
+            }
+        }
+        
+        int testador = 0;
+        
+        for (boolean[] bs : matrizMov) {
+            for (boolean b : bs) {
+                testador+=(b)?1:0;
+            }
+        }
+        
+        return testador>0;
+    }
+    
+    public boolean isMovBaixo(){
+        
+        boolean[][] matrizMov = new boolean[nLinhas][nColunas];
+        
+        for (int linha = 0; linha < matrizTabuleiro.length-1; linha++) {
+            for (int coluna = 0; coluna < matrizTabuleiro[linha].length; coluna++) {
+                
+                if(matrizTabuleiro[linha][coluna]==0){
+                    matrizMov[linha][coluna]=false;
+                }
+                else if(((matrizTabuleiro[linha][coluna]==matrizTabuleiro[linha+1][coluna])||
+                   (matrizTabuleiro[linha+1][coluna]==0))&(matrizElemento[linha+1][coluna].isBloqueado()==false)){
+                    matrizMov[linha][coluna]=true;
+                }
+                else{
+                    matrizMov[linha][coluna]=false;
+                }
+                
+            }
+        }
+        
+        int testador = 0;
+        
+        for (boolean[] bs : matrizMov) {
+            for (boolean b : bs) {
+                testador+=(b)?1:0;
+            }
+        }
+        
+        return testador>0;
     }
 
 }

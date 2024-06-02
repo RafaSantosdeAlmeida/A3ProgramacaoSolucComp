@@ -38,6 +38,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
         setLocation(new java.awt.Point(650, 175));
         setMaximumSize(new java.awt.Dimension(700, 700));
         setMinimumSize(new java.awt.Dimension(700, 700));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
