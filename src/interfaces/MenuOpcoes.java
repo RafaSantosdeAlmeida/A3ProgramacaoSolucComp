@@ -106,10 +106,11 @@ public class MenuOpcoes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Botão jogar
-        MenuInicial menuInicial = new MenuInicial();
+        MenuInicial menuInicial = new MenuInicial(this.jComboBox1.getSelectedItem().toString());
         
         menuInicial.setVisible(true);
         this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

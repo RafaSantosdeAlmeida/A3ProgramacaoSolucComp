@@ -26,7 +26,7 @@ public class Tabuleiro {
     }
 
 
-    public Tabuleiro(int nLinhas, int nColunas){    //CONSTRUTOR
+    public Tabuleiro(int nLinhas, int nColunas, int nBloqueios){    //CONSTRUTOR
         this.matrizTabuleiro = new int[nLinhas][nColunas];
         this.matrizElemento = new Elemento[nLinhas][nColunas];
         this.nLinhas = nLinhas;
@@ -41,7 +41,9 @@ public class Tabuleiro {
         }
         
         //Gera dois novo bloqueio
-        gerarBloqueio();
+        for (int i = 0; i < nBloqueios; i++) {
+            gerarBloqueio();
+        }
         
         //CRIAR objetos Elemento na matriz
         
@@ -262,6 +264,10 @@ public class Tabuleiro {
         return false;
     }
     
+    /**
+     * 
+     * @return Retorna true se a matriz não possui mais movimentos possiveis
+     */
     public boolean isLose(){
         if((this.isMovEsquerda()==false)&
            (this.isMovCima()==false)&

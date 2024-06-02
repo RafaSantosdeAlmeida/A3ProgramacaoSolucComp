@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import jogo2048.Tabuleiro;
+
 /**
  *
  * @author marco
@@ -13,8 +15,21 @@ public class MenuInicial extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public MenuInicial() {
+    
+    int dificuldade;
+    
+    public MenuInicial(String dificuldade) {
         initComponents();
+        
+        if(dificuldade=="Facil"){
+            this.dificuldade = 0;
+        }
+        else if(dificuldade=="Médio"){
+            this.dificuldade = 1;
+        }
+        else if(dificuldade=="Dificil"){
+            this.dificuldade = 3;
+        }
     }
 
     /**
@@ -113,22 +128,27 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
         // Botão jogar
+        Tabuleiro tab = new Tabuleiro(4,4,this.dificuldade);
+        TelaPrincipal tela = new TelaPrincipal(tab);
+        tab.setElementos();
+        tela.setComponentes(tab.getMatrizElemento());
+        tela.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_botaoJogarActionPerformed
 
     private void botaoOpcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoOpcoesMouseClicked
         // TODO add your handling code here:
         // Botão opções
-//        MenuOpcoes menuOpcoes = new MenuOpcoes();
-//        menuOpcoes.setVisible(true);
-//        this.setVisible(false);
     }//GEN-LAST:event_botaoOpcoesMouseClicked
 
     private void botaoOpcoesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoOpcoesMouseReleased
-
+        
     }//GEN-LAST:event_botaoOpcoesMouseReleased
 
     private void botaoJogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoJogarMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_botaoJogarMouseClicked
 
     /**
@@ -162,7 +182,7 @@ public class MenuInicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuInicial().setVisible(true);
+                new MenuInicial("").setVisible(true);
             }
         });
     }

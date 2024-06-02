@@ -25,7 +25,7 @@ public class Jogo2048 {
 //            telaPrincipal.setVisible(true);
 //            //tab.novaJogada();
 //        }
-          MenuInicial painel = new MenuInicial();
+          MenuInicial painel = new MenuInicial("Facil");
           
           do{
               painel.setVisible(true);
