@@ -28,14 +28,11 @@ public class MenuOpcoes extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(650, 175));
+        setLocation(new java.awt.Point(600, 170));
         setMaximumSize(new java.awt.Dimension(700, 700));
         setMinimumSize(new java.awt.Dimension(700, 700));
         setResizable(false);
@@ -45,7 +42,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nivel de dificuldade");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(230, 380, 240, 30);
+        jLabel2.setBounds(230, 220, 240, 30);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -61,12 +58,6 @@ public class MenuOpcoes extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(250, 570, 210, 70);
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tamanho do Tabuleiro");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(220, 140, 260, 30);
-
         jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
         jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,21 +68,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(280, 430, 150, 40);
-
-        jList1.setBackground(new java.awt.Color(0, 0, 0));
-        jList1.setBorder(null);
-        jList1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jList1.setForeground(new java.awt.Color(255, 255, 255));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "4x4", "5x5", "6x6", "7x7", "8x8" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(320, 180, 80, 170);
+        jComboBox1.setBounds(270, 260, 150, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ImagemOpcoes.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -153,8 +130,5 @@ public class MenuOpcoes extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

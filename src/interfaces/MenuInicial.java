@@ -47,7 +47,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(650, 170));
+        setLocation(new java.awt.Point(600, 170));
         setMinimumSize(new java.awt.Dimension(700, 700));
         setResizable(false);
         getContentPane().setLayout(null);

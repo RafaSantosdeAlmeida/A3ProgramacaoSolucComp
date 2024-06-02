@@ -77,6 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
+        setLocation(new java.awt.Point(600, 170));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 239));
@@ -633,7 +634,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setForeground(new java.awt.Color(0, 0, 153));
 
-        jPanel4.setBackground(new java.awt.Color(205, 193, 180));
+        jPanel4.setBackground(new java.awt.Color(26, 108, 145));
         jPanel4.setForeground(new java.awt.Color(153, 153, 153));
 
         txtScore.setBackground(new java.awt.Color(0, 0, 0));
@@ -701,7 +702,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -712,7 +713,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
         );
 
         pack();
@@ -868,7 +869,11 @@ public class TelaPrincipal extends javax.swing.JFrame implements KeyListener{
     public void keyReleased(KeyEvent e) {
         
         if(tab.isLose()){
-            JOptionPane.showMessageDialog(this, "Game Over, infelizmente você perdeu tente novamente","Derrota" , HEIGHT);
+            JOptionPane.showMessageDialog(this, "Game Over, infelizmente você perdeu tente novamente","Derrota" , JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        }
+        else if(tab.isWin()){
+            JOptionPane.showMessageDialog(this, "Parabéns!! Você ganhou o 2048!","Vitória" , JOptionPane.INFORMATION_MESSAGE);
             System.exit(0);
         }
         else if((e.getKeyChar()=='w')&tab.isMovCima()){
